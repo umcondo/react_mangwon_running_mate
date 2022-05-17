@@ -1,8 +1,15 @@
+import { useNavigate } from "react-router-dom";
+
 // 컴포넌트
 import Animation from "./../Components/Animation";
 import Footer from "../Components/Footer";
 
 const FirstPage = () => {
+  const navigate = useNavigate();
+
+  const viewQuestion = () => {
+    navigate("/question");
+  };
   return (
     <div className="first_page">
       <div className="first_page_container">
@@ -23,7 +30,9 @@ const FirstPage = () => {
         <p>
           내 취향에 맞는 망원, 마포의 <span>런닝 코스</span>를 알아보세요 !!
         </p>
-        <button id="start_btn">러닝 코스 추천 시작하기</button>
+        <button id="start_btn" onClick={viewQuestion}>
+          러닝 코스 추천 시작하기
+        </button>
       </div>
       {/* 푸터 */}
       <Footer />
