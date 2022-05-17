@@ -5,6 +5,8 @@ import FirstPage from "./Pages/FirstPage";
 import QuestionPage from "./Pages/QuestionPage";
 import ResultPage from "./Pages/ResultPage";
 
+/* Css */
+import "./default.css";
 const App = () => {
   return (
     <BrowserRouter>
