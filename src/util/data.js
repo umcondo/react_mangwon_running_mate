@@ -1,6 +1,6 @@
 // data 형식 객체
 // CourseData 배열 - 객체 courseName(코스 이름), courseDistance(코스 거리), coursePath(코스경로), courseInfo(코스 설명)
-const CourseData = [
+export const CourseData = [
   {
     id: 0,
     courseName: "망원 - 선유도공원",
@@ -166,7 +166,7 @@ export const Question = [
  coordinates 객체안에 id, Mapcenter(맵의 중심좌표), track(코스의 트랙좌표)
  */
 
-const coordinates = [
+export const coordinates = [
   {
     id: 0,
     MapCenter: {

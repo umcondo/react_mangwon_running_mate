@@ -10,6 +10,7 @@ const FirstPage = () => {
   const viewQuestion = () => {
     navigate("/question");
   };
+
   return (
     <div className="first_page">
       <div className="first_page_container">

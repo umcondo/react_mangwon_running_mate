@@ -8,10 +8,7 @@ import QuestionContent from "../Components/QuestionContent";
 /* 데이터 */
 import { Question } from "./../util/data";
 
-// 답변을 모아두는 박스
-const resultBox = [];
-
-const QuestionPage = () => {
+const QuestionPage = ({ resultBox, setResultBox }) => {
   // state : questionNum : 1(default), 2, 3
   // state에 따라 달라지는 것 : 진행바, 진행이미지, 질문이미지, 질문제목, 질문내용
 
@@ -49,20 +46,23 @@ const QuestionPage = () => {
     let curValue2 = currentQuestion.answer[1].value[0];
 
     targetValue.slice(0, 3) === curAnswer1.slice(0, 3)
-      ? resultBox.push(curValue1)
-      : resultBox.push(curValue2);
+      ? setResultBox([...resultBox, curValue1])
+      : setResultBox([...resultBox, curValue2]);
+    // targetValue.slice(0, 3) === curAnswer1.slice(0, 3)
+    //   ? resultBox.push(curValue1)
+    //   : resultBox.push(curValue2);
   };
 
   const navigate = useNavigate();
   const resultAnimation = () => {
     navigate("/result");
-    console.log(resultBox);
   };
 
   // 뒤로가기 버튼 : state를 -1 한다.
   const backwardBtn = () => {
     setCurrentQuestionIndex(currentQuestionIndex - 1);
-    resultBox.pop();
+    setResultBox(resultBox.slice(0, resultBox.length - 1));
+    // resultBox.pop();
   };
   return (
     <div className="question_container">

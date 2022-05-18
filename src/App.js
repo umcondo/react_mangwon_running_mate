@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 /* Page */
@@ -8,13 +9,26 @@ import ResultPage from "./Pages/ResultPage";
 /* Css */
 import "./default.css";
 const App = () => {
+  // 답변을 모아두는 박스
+  const [resultBox, setResultBox] = useState([]);
+
   return (
     <BrowserRouter>
       <div className="App">
         <Routes>
           <Route path="/" element={<FirstPage />} />
-          <Route path="/question" element={<QuestionPage />} />
-          <Route path="/result" element={<ResultPage />} />
+          <Route
+            path="/question"
+            element={
+              <QuestionPage resultBox={resultBox} setResultBox={setResultBox} />
+            }
+          />
+          <Route
+            path="/result"
+            element={
+              <ResultPage resultBox={resultBox} setResultBox={setResultBox} />
+            }
+          />
         </Routes>
       </div>
     </BrowserRouter>
