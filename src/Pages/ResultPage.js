@@ -36,7 +36,15 @@ const ResultPage = ({ resultBox, setResultBox }) => {
     }
   };
 
-  const resultIndex = resultValue();
+  let resultIndex = resultValue();
+  // 새로고침해도 데이터를 저장하기 위해 로컬스토리지를 활용
+  // 데이터가 없으면 로컬스토리지에서 가져온다.
+  // 데이터가 있으면 로컬스토리지에 저장한다.
+  if (resultIndex) {
+    localStorage.setItem("resultIndex", resultIndex);
+  } else {
+    resultIndex = +localStorage.getItem("resultIndex");
+  }
 
   const course = CourseData[resultIndex];
   const courseDistance = course.courseDistance;
