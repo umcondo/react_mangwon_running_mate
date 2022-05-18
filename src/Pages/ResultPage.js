@@ -1,13 +1,14 @@
-// 컴포넌트
-import KakaoMap from "../Components/KakaoMap";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
 // data
 import { CourseData, coordinates } from "../util/data";
 
-const ResultPage = ({ resultBox, setResultBox }) => {
-  const env = process.env;
-  env.PUBLIC_URL = env.PUBLIC_URL || "";
+// 컴포넌트
+import KakaoMap from "../Components/KakaoMap";
+import Modal from "../Components/Modal";
 
+const ResultPage = ({ resultBox, setResultBox }) => {
   // 난이도 : "beginner - b" , "intermediate - i"
   // 한강, 내륙 : "Hangang" - H , "inland" - i,
   // 혼잡도 : "loud" - l, "quiet"- q
@@ -68,8 +69,11 @@ const ResultPage = ({ resultBox, setResultBox }) => {
     navigate("/question");
   };
 
+  const [control, setControl] = useState(false);
   // 공유하기 모달
-
+  const modalBtn = () => {
+    return setControl(!control);
+  };
   return (
     <div className="result">
       {/* 결과 코스 */}
@@ -86,7 +90,6 @@ const ResultPage = ({ resultBox, setResultBox }) => {
       <h3 className="result_course_path">{coursePath}</h3>
       {/* 카카오맵 */}
       <KakaoMap />
-
       {/* 코스설명 */}
       <div className="result_text">
         <b>{courseInfoText[0]}</b>
@@ -98,36 +101,13 @@ const ResultPage = ({ resultBox, setResultBox }) => {
             ))}
         </ul>
       </div>
-
       {/* 버튼 */}
       <div className="result_btn_container">
         <button onClick={reStartBtn}>다시하기</button>
-        <button>공유하기</button>
+        <button onClick={modalBtn}>공유하기</button>
       </div>
       {/* <!-- 공유하기 모달창 --> */}
-      <div className="result_modal">
-        <div className="modal_container">
-          <h3>공유하기</h3>
-          <div className="modal_content">
-            <img
-              src={env.PUBLIC_URL + "/assets/image/copy3.png"}
-              alt="링크복사"
-            />
-
-            <span>링크복사</span>
-          </div>
-          <div className="modal_content">
-            <img
-              src={env.PUBLIC_URL + "/assets/image/kakao_logo.png"}
-              alt="카카오톡"
-            />
-            <span>카카오톡</span>
-          </div>
-          <div className="modal_exit">
-            <i className="fa-solid fa-xmark"></i>
-          </div>
-        </div>
-      </div>
+      <Modal control={control} modalBtn={modalBtn} />
     </div>
   );
 };

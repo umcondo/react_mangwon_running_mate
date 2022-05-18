@@ -619,7 +619,7 @@
 }
 /* 공유하기 모달 */
 .result_modal {
-  display: none;
+  display: block;
   position: fixed;
   left: 0;
   top: 0;
