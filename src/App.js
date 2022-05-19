@@ -8,6 +8,7 @@ import ResultPage from "./Pages/ResultPage";
 
 /* Css */
 import "./default.css";
+import "./mobile.css";
 const App = () => {
   // 답변을 모아두는 박스
   const [resultBox, setResultBox] = useState([]);

@@ -89,7 +89,7 @@ const ResultPage = ({ resultBox, setResultBox }) => {
       </div>
       <h3 className="result_course_path">{coursePath}</h3>
       {/* 카카오맵 */}
-      <KakaoMap />
+      <KakaoMap coordinates={coordinates} resultIndex={resultIndex} />
       {/* 코스설명 */}
       <div className="result_text">
         <b>{courseInfoText[0]}</b>
