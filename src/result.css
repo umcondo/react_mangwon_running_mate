@@ -4,7 +4,6 @@
   top: 0px;
   height: 100%;
   width: 100%;
-  display: none;
   flex-direction: column;
   transform: scale(0.7);
   z-index: 10;

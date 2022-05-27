@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FirstPage from "./Pages/FirstPage";
 import QuestionPage from "./Pages/QuestionPage";
 import ResultPage from "./Pages/ResultPage";
-
+import AnimationPage from "./Pages/AnimationPage";
 /* Css */
 import "./default.css";
 import "./mobile.css";
@@ -24,6 +24,7 @@ const App = () => {
               <QuestionPage resultBox={resultBox} setResultBox={setResultBox} />
             }
           />
+
           <Route
             path="/result"
             element={

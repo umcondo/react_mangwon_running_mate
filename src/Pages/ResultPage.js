@@ -7,6 +7,7 @@ import { CourseData, coordinates } from "../util/data";
 // 컴포넌트
 import KakaoMap from "../Components/KakaoMap";
 import Modal from "../Components/Modal";
+import AnimationPage from "./AnimationPage";
 
 const ResultPage = ({ resultBox, setResultBox }) => {
   // 난이도 : "beginner - b" , "intermediate - i"
@@ -74,6 +75,7 @@ const ResultPage = ({ resultBox, setResultBox }) => {
   const modalBtn = () => {
     return setControl(!control);
   };
+
   return (
     <div className="result">
       {/* 결과 코스 */}
