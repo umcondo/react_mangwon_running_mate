@@ -4,7 +4,6 @@
   top: 0px;
   height: 100%;
   width: 100%;
-  display: none;
   flex-direction: column;
   transform: scale(0.7);
   z-index: 10;
@@ -18,7 +17,7 @@
   text-align: center;
   font-size: 2.5em;
   width: 130%;
-  animation: shake 2s infinite linear;
+  animation: shake 2s linear;
 }
 @keyframes shake {
   from {
@@ -38,6 +37,14 @@
   width: 100%;
 }
 
+.result_container {
+  position: absolute;
+  z-index: 1;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: updown 0.5s linear infinite alternate;
+}
 .hand1 {
   position: absolute;
   z-index: -1;
@@ -503,15 +510,12 @@
   align-items: center;
   justify-content: center;
   color: var(--font-color-dark);
-  /* animation: result_fadeIn 2.6s linear; */
+  animation: result_fadeIn 0.6s linear;
 }
 @keyframes result_fadeIn {
   from {
     opacity: 0;
-    transform: translateY(30%);
-  }
-  80% {
-    opacity: 0;
+    transform: translateY(15%);
   }
   to {
     opacity: 1;

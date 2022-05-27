@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 /* 컴포넌트 */
 import Progress from "../Components/Progress";
 import QuestionContent from "../Components/QuestionContent";
+import AnimationPage from "./AnimationPage";
 
 /* 데이터 */
 import { Question } from "./../util/data";
@@ -48,9 +49,6 @@ const QuestionPage = ({ resultBox, setResultBox }) => {
     targetValue.slice(0, 3) === curAnswer1.slice(0, 3)
       ? setResultBox([...resultBox, curValue1])
       : setResultBox([...resultBox, curValue2]);
-    // targetValue.slice(0, 3) === curAnswer1.slice(0, 3)
-    //   ? resultBox.push(curValue1)
-    //   : resultBox.push(curValue2);
   };
 
   const navigate = useNavigate();
@@ -62,8 +60,8 @@ const QuestionPage = ({ resultBox, setResultBox }) => {
   const backwardBtn = () => {
     setCurrentQuestionIndex(currentQuestionIndex - 1);
     setResultBox(resultBox.slice(0, resultBox.length - 1));
-    // resultBox.pop();
   };
+
   return (
     <div className="question_container">
       {/* <!-- 진행바 --> */}

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // data
 import { CourseData, coordinates } from "../util/data";
@@ -7,6 +7,7 @@ import { CourseData, coordinates } from "../util/data";
 // 컴포넌트
 import KakaoMap from "../Components/KakaoMap";
 import Modal from "../Components/Modal";
+import AnimationPage from "./AnimationPage";
 
 const ResultPage = ({ resultBox, setResultBox }) => {
   // 난이도 : "beginner - b" , "intermediate - i"
@@ -74,41 +75,58 @@ const ResultPage = ({ resultBox, setResultBox }) => {
   const modalBtn = () => {
     return setControl(!control);
   };
+
+  //결과애니메이션
+
+  let [isShow, SetIsShow] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      SetIsShow(false);
+    }, 2000);
+  });
+
   return (
-    <div className="result">
-      {/* 결과 코스 */}
-      <div className="result_head_container">
-        <h2 className="result_head">
-          <span className="courseNameNum">{courseId + 1}코스</span>
-          <span className="courseName">{courseName}</span>
-        </h2>
-        <h4 className="result_course_destination">
-          <span>{courseDestination}</span> | 코스 총거리 :
-          <span>{courseDistance}</span>
-        </h4>
-      </div>
-      <h3 className="result_course_path">{coursePath}</h3>
-      {/* 카카오맵 */}
-      <KakaoMap coordinates={coordinates} resultIndex={resultIndex} />
-      {/* 코스설명 */}
-      <div className="result_text">
-        <b>{courseInfoText[0]}</b>
-        <ul>
-          {courseInfoText
-            .filter((elm, idx) => idx !== 0)
-            .map((elm, idx) => (
-              <li key={idx}>{elm}</li>
-            ))}
-        </ul>
-      </div>
-      {/* 버튼 */}
-      <div className="result_btn_container">
-        <button onClick={reStartBtn}>다시하기</button>
-        <button onClick={modalBtn}>공유하기</button>
-      </div>
-      {/* <!-- 공유하기 모달창 --> */}
-      <Modal control={control} modalBtn={modalBtn} />
-    </div>
+    <>
+      {isShow ? (
+        <AnimationPage />
+      ) : (
+        <div className="result">
+          {/* 결과 코스 */}
+          <div className="result_head_container">
+            <h2 className="result_head">
+              <span className="courseNameNum">{courseId + 1}코스</span>
+              <span className="courseName">{courseName}</span>
+            </h2>
+            <h4 className="result_course_destination">
+              <span>{courseDestination}</span> | 코스 총거리 :
+              <span>{courseDistance}</span>
+            </h4>
+          </div>
+          <h3 className="result_course_path">{coursePath}</h3>
+          {/* 카카오맵 */}
+          <KakaoMap coordinates={coordinates} resultIndex={resultIndex} />
+          {/* 코스설명 */}
+          <div className="result_text">
+            <b>{courseInfoText[0]}</b>
+            <ul>
+              {courseInfoText
+                .filter((elm, idx) => idx !== 0)
+                .map((elm, idx) => (
+                  <li key={idx}>{elm}</li>
+                ))}
+            </ul>
+          </div>
+          {/* 버튼 */}
+          <div className="result_btn_container">
+            <button onClick={reStartBtn}>다시하기</button>
+            <button onClick={modalBtn}>공유하기</button>
+          </div>
+          {/* <!-- 공유하기 모달창 --> */}
+          <Modal control={control} modalBtn={modalBtn} />
+        </div>
+      )}
+    </>
   );
 };
 
