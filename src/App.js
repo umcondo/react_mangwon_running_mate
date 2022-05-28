@@ -5,10 +5,13 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FirstPage from "./Pages/FirstPage";
 import QuestionPage from "./Pages/QuestionPage";
 import ResultPage from "./Pages/ResultPage";
-import AnimationPage from "./Pages/AnimationPage";
+// import AnimationPage from "./Pages/AnimationPage";
+
 /* Css */
 import "./default.css";
 import "./mobile.css";
+import "./result.css";
+
 const App = () => {
   // 답변을 모아두는 박스
   const [resultBox, setResultBox] = useState([]);

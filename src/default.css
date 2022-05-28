@@ -1,16 +1,9 @@
-@import url("result.css");
-
 @font-face {
   font-family: "Apple SD Gothic Neo";
   src: url("../public/assets/font/AppleSDGothicNeoL00.woff") format("woff");
 }
 
 :root {
-  /* --font-color-dark: #15133c; */
-  /* --font-color-orange: #ec994b; */
-  /* --font-color-white: #f1eee9; */
-  /* --border-color: #73777b; */
-
   --font-color-orange: orange;
   --border-color: #000;
   --font-color-dark: #000;
@@ -33,7 +26,6 @@ body,
 }
 .App {
   height: 100%;
-  /* overflow: hidden; */
 }
 
 /* *********************** 첫페이지 *********************** */
@@ -143,12 +135,18 @@ footer {
 .mobile_footer {
   display: none;
 }
+
 .footer-info:nth-child(1) {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 5px;
+}
+.mobile_footer_info a,
+.footer-info a {
+  text-decoration: none;
+  color: var(--font-color-dark);
 }
 /* *********************** 질문페이지 *********************** */
 .question_container {

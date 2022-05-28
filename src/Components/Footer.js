@@ -14,7 +14,15 @@ const Footer = () => {
             03965 서울특별시 마포구 성산로4길 53(성산동)
             <br />
             TEL) 02-3153-8555 <br />
-            created by <b>KangDaeguk</b> | all rights reserved
+            created by{" "}
+            <a
+              href="https://github.com/umcondo"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <b>KangDaeguk</b>
+            </a>{" "}
+            | all rights reserved
           </p>
         </div>
         <div className="footer-sns">
@@ -45,7 +53,15 @@ const Footer = () => {
         <div className="mobile_footer_info">
           <h3>망원 런닝 메이트</h3>
           <p>
-            created by <b>KangDaeguk</b> <span>| all rights reserved</span>
+            created by{" "}
+            <a
+              href="https://github.com/umcondo"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <b>KangDaeguk</b>
+            </a>{" "}
+            <span>| all rights reserved</span>
           </p>
         </div>
       </div>

@@ -1,4 +1,4 @@
-/******************** 결과대기 애니메이션 페이지 ********************/
+/* 결과대기 애니메이션 페이지 */
 .result_animation {
   position: absolute;
   top: 0px;
@@ -36,7 +36,6 @@
 .Animation img {
   width: 100%;
 }
-
 .result_container {
   position: absolute;
   z-index: 1;
@@ -501,14 +500,13 @@
   }
 }
 
-/********************** 결과페이지 ********************/
+/* 결과페이지 */
 .result {
   height: 100%;
   padding: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   color: var(--font-color-dark);
   animation: result_fadeIn 0.6s linear;
 }
@@ -524,11 +522,13 @@
 .result_map_container {
   position: relative;
 }
+
 /* 결과 제목 */
 .result_head_container {
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   width: 900px;
   padding-bottom: 30px;
@@ -552,11 +552,11 @@
   padding-top: 5px;
   margin-bottom: 2px;
 }
-
 .result_course_destination {
   font-weight: bold;
   color: rgb(148, 148, 148);
 }
+
 /* 결과 코스 경로 */
 .result_course_path {
   text-align: center;
@@ -564,7 +564,6 @@
   margin-bottom: 15px;
   width: 900px;
 }
-
 .result_map_container {
   margin-bottom: 20px;
 }
@@ -596,7 +595,7 @@
 
 /* 다시하기 버튼, 공유하기 버튼 div*/
 .result_btn_container {
-  display: block;
+  flex-grow: 1;
   text-align: center;
 }
 .result_btn_container button {
@@ -612,18 +611,12 @@
   color: var(--font-color-orange);
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .result_btn_container button:hover {
-    background-color: var(--font-color-orange);
-    color: var(--font-color-white);
-  }
-}
 .result_btn_container button:nth-child(1) {
   margin-right: 10px;
 }
+
 /* 공유하기 모달 */
 .result_modal {
-  display: block;
   position: fixed;
   left: 0;
   top: 0;
@@ -661,11 +654,9 @@
   margin-right: 20px;
   cursor: pointer;
 }
-
 .result_modal .modal_container .modal_content span {
   cursor: pointer;
 }
-
 .result_modal .modal_container .modal_exit {
   position: absolute;
   top: 20px;
@@ -673,18 +664,13 @@
   font-size: 1.3em;
   color: #aaaaaa;
 }
-@media (hover: hover) and (pointer: fine) {
-  .result_modal .modal_container .modal_exit:hover {
-    color: #000;
-    cursor: pointer;
-  }
-}
 
-/* *********************** 카카오맵 *********************** */
+/*  카카오맵  */
 #map {
   width: 900px;
   height: 450px;
 }
+
 /* 거점 */
 .dot {
   overflow: hidden;
@@ -693,6 +679,7 @@
   height: 12px;
   background: url("https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/mini_circle.png");
 }
+
 /* 거점 오버레이 */
 .dotOverlay {
   position: relative;
@@ -707,12 +694,7 @@
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 2px 0px;
   opacity: 0.9;
 }
-@media (hover: hover) and (pointer: fine) {
-  .dotOverlay:hover {
-    opacity: 1;
-    cursor: pointer;
-  }
-}
+
 .dotOverlay:nth-of-type(n) {
   border: 0;
   box-shadow: 0px 1px 2px #888;
@@ -735,7 +717,6 @@ article {
   z-index: 1;
   display: inline-block;
 }
-
 .distanceInfo {
   position: relative;
   top: 50px;
@@ -746,7 +727,6 @@ article {
   padding: 10px 20px;
   opacity: 1;
 }
-
 .distanceInfo .label {
   display: inline-block;
   width: 50px;
@@ -754,12 +734,10 @@ article {
 .distanceInfo:after {
   content: none;
 }
-
 /* 버튼 z-index 조정*/
 .map_btn_zIndex {
   z-index: 2;
 }
-
 /* 거점 숨기기 버튼 */
 #map > .pointToggleBtn {
   position: relative;
@@ -781,11 +759,6 @@ article {
   box-sizing: content-box;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 2px 0px;
-}
-@media (hover: hover) and (pointer: fine) {
-  .overlay_toggle_btn:hover {
-    background: #f5f5f5;
-  }
 }
 
 .toggle {
@@ -810,14 +783,10 @@ article {
   box-shadow: rgb(0 0 0 / 15%) 0px 2px 2px 0px;
   background-color: #fff;
   color: var(--font-color-dark);
+  z-index: 5;
   font-size: 15px;
   border: 1px solid #919191;
   border-radius: 5px;
-}
-@media (hover: hover) and (pointer: fine) {
-  .current_location_btn:hover {
-    background: #f5f5f5;
-  }
 }
 
 /* map controller */
@@ -831,6 +800,7 @@ article {
   border: 1px solid #919191;
   border-radius: 5px;
 }
+
 /* 지도 타입 변경 버튼*/
 .custom_typecontrol {
   position: absolute;
@@ -858,11 +828,7 @@ article {
 .custom_typecontrol .btn {
   background: #fff;
 }
-@media (hover: hover) and (pointer: fine) {
-  .custom_typecontrol .btn:hover {
-    background: #f5f5f5;
-  }
-}
+
 .custom_typecontrol .btn:active {
   background: #e6e6e6;
 }
@@ -870,11 +836,7 @@ article {
   color: #fff;
   background: #777d86;
 }
-@media (hover: hover) and (pointer: fine) {
-  .custom_typecontrol .selected_btn:hover {
-    color: #fff;
-  }
-}
+
 /* 지도 축소, 확대 변경 버튼*/
 .custom_zoomcontrol {
   position: absolute;
@@ -886,12 +848,6 @@ article {
   background-color: #fff;
   box-sizing: content-box;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 2px 0px;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .custom_zoomcontrol span:hover {
-    background: #f5f5f5;
-  }
 }
 
 .custom_zoomcontrol span {
