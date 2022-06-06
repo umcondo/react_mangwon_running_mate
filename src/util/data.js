@@ -4,14 +4,14 @@ export const CourseData = [
   {
     id: 0,
     courseName: "망원 - 선유도공원",
-    courseDistance: "4~5km",
+    courseDistance: "2~3km",
     courseDestination: "선유도공원",
-    coursePath: `망원한강공원 → 선유도 → 상수나들목`,
+    coursePath: `망원한강공원 → 양화대교 → 선유도공원`,
     courseInfo: `<b>선유도공원을 경유하는 코스</b> 
     <ul>
       <li>비교적 사람들이 붐비는 코스다. 
       <li>양화대교를 올라갈 때 계단을 올라가야 하므로 주의해야 한다. 
-      <li>다리 위에서의 한강과 서울 서쪽의 경관을 즐길 수 있다.,
+      <li>다리 위에서의 한강과 서울 서쪽의 경관을 즐길 수 있다.
       <li>한강 가운데의 섬, 선유도를 체험해 볼 수 있다.
     </ul>`,
   },
@@ -25,7 +25,7 @@ export const CourseData = [
     <ul>
       <li>달리기, 걷기를 위한 트랙이 잘 깔려 있다. 
       <li>홍제천은 한강에 비해 비교적 사람이 적다. 
-      <li>도착지점에서 안산과 인공폭포를 볼 수 있다..
+      <li>도착지점에서 안산과 인공폭포를 볼 수 있다.
       <li>초심자라면 도중 돌아오는 것을 추천한다.
     </ul>`,
   },
