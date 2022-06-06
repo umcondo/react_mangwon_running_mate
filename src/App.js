@@ -5,7 +5,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FirstPage from "./pages/FirstPage";
 import QuestionPage from "./pages/QuestionPage";
 import ResultPage from "./pages/ResultPage";
-// import AnimationPage from "./Pages/AnimationPage";
 
 /* Css */
 import "./default.css";
@@ -23,12 +22,6 @@ const App = () => {
           <Route path="/" element={<FirstPage />} />
           <Route
             path="/question"
-            element={
-              <QuestionPage resultBox={resultBox} setResultBox={setResultBox} />
-            }
-          />
-          <Route
-            path="/"
             element={
               <QuestionPage resultBox={resultBox} setResultBox={setResultBox} />
             }
