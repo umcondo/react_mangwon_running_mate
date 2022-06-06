@@ -18,6 +18,7 @@ const ResultPage = ({ resultBox, setResultBox }) => {
    혼잡도 : "loud" - l, "quiet"- q
  * @returns 코스번호
  */
+
   const resultValue = () => {
     switch (resultBox.join("")) {
       case "bHl": // 선유도
@@ -48,7 +49,9 @@ const ResultPage = ({ resultBox, setResultBox }) => {
   데이터가 없으면 로컬스토리지에서 가져온다.
   데이터가 있으면 로컬스토리지에 저장한다.
   */
-  if (resultIndex) {
+
+  // resultIndex가 0일 경우 로컬스토리지에서 값을 가져오므로 +1을 해주었다.
+  if (resultIndex + 1) {
     localStorage.setItem("resultIndex", resultIndex);
   } else {
     resultIndex = +localStorage.getItem("resultIndex");
