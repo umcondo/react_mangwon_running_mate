@@ -2,9 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 /* 컴포넌트 */
-import Progress from "../Components/Progress";
-import QuestionContent from "../Components/QuestionContent";
-import AnimationPage from "./AnimationPage";
+import Progress from "../components/Progress";
+import QuestionContent from "../components/QuestionContent";
 
 /* 데이터 */
 import { Question } from "./../util/data";

@@ -2,9 +2,9 @@ import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 /* Page */
-import FirstPage from "./Pages/FirstPage";
-import QuestionPage from "./Pages/QuestionPage";
-import ResultPage from "./Pages/ResultPage";
+import FirstPage from "./pages/FirstPage";
+import QuestionPage from "./pages/QuestionPage";
+import ResultPage from "./pages/ResultPage";
 // import AnimationPage from "./Pages/AnimationPage";
 
 /* Css */

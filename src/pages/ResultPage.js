@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import { CourseData, coordinates } from "../util/data";
 
 // 컴포넌트
-import KakaoMap from "../Components/KakaoMap";
-import Modal from "../Components/Modal";
+import KakaoMap from "../components/KakaoMap";
+import Modal from "../components/Modal";
 import AnimationPage from "./AnimationPage";
 
 const ResultPage = ({ resultBox, setResultBox }) => {
