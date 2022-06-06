@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 const { kakao } = window;
 
 const KakaoMap = ({ coordinates, resultIndex }) => {
+  const mapRef = useRef();
   // 브라우저 리사이즈 시 좌표맵 이동시키기 위해 전역변수 설정
   var map = "";
   let CENTER_POINT = "";
@@ -29,7 +30,7 @@ const KakaoMap = ({ coordinates, resultIndex }) => {
 
   function runningCourse(coordinates, MapCenter) {
     /* 지도 생성 */
-    var mapContainer = document.getElementById("map"), // 지도를 표시할 div
+    var mapContainer = mapRef.current, // 지도를 표시할 div
       mapOption = {
         center: new kakao.maps.LatLng(MapCenter.lng, MapCenter.lat), // 지도의 중심좌표
         level: MapCenter.mapDepthLevel, // 지도의 확대 레벨
@@ -148,7 +149,7 @@ const KakaoMap = ({ coordinates, resultIndex }) => {
     );
 
     // 출발 마커를 생성합니다
-    var startMarker = new kakao.maps.Marker({
+    startMarker = new kakao.maps.Marker({
       map: map, // 출발 마커가 지도 위에 표시되도록 설정합니다
       position: startPosition,
       image: startImage, // 출발 마커이미지를 설정합니다
@@ -301,13 +302,6 @@ const KakaoMap = ({ coordinates, resultIndex }) => {
     currentMarker();
   }
 
-  function setCenter() {
-    // 이동할 위도 경도 위치를 생성합니다
-    var moveLatLon = new kakao.maps.LatLng(la, lo);
-
-    // 지도 중심을 이동 시킵니다
-    map.setCenter(moveLatLon);
-  }
   function currentLocation() {
     // 현위치 찾기
     getLocation();
@@ -388,7 +382,7 @@ const KakaoMap = ({ coordinates, resultIndex }) => {
   });
 
   return (
-    <div id="map" className="map_style">
+    <div ref={mapRef} id="map" className="map_style">
       <div className="pointToggleBtn map_btn_zIndex">
         <button
           id="toggle_btn"

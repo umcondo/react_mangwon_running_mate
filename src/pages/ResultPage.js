@@ -8,13 +8,16 @@ import { CourseData, coordinates } from "../util/data";
 import KakaoMap from "../components/KakaoMap";
 import Modal from "../components/Modal";
 import AnimationPage from "./AnimationPage";
+import CourseHeader from "../components/CourseHeader";
 
 const ResultPage = ({ resultBox, setResultBox }) => {
-  // 난이도 : "beginner - b" , "intermediate - i"
-  // 한강, 내륙 : "Hangang" - H , "inland" - i,
-  // 혼잡도 : "loud" - l, "quiet"- q
-
-  // 결과값 함수
+  /**
+ * 결과값 함수
+ * 난이도 : "beginner - b" , "intermediate - i"
+   한강, 내륙 : "Hangang" - H , "inland" - i,
+   혼잡도 : "loud" - l, "quiet"- q
+ * @returns 코스번호
+ */
   const resultValue = () => {
     switch (resultBox.join("")) {
       case "bHl": // 선유도
@@ -39,9 +42,12 @@ const ResultPage = ({ resultBox, setResultBox }) => {
   };
 
   let resultIndex = resultValue();
-  // 새로고침해도 데이터를 저장하기 위해 로컬스토리지를 활용
-  // 데이터가 없으면 로컬스토리지에서 가져온다.
-  // 데이터가 있으면 로컬스토리지에 저장한다.
+
+  /*
+  새로고침해도 데이터를 저장하기 위해 로컬스토리지를 활용
+  데이터가 없으면 로컬스토리지에서 가져온다.
+  데이터가 있으면 로컬스토리지에 저장한다.
+  */
   if (resultIndex) {
     localStorage.setItem("resultIndex", resultIndex);
   } else {
@@ -77,7 +83,6 @@ const ResultPage = ({ resultBox, setResultBox }) => {
   };
 
   //결과애니메이션
-
   let [isShow, SetIsShow] = useState(true);
 
   useEffect(() => {
@@ -93,19 +98,17 @@ const ResultPage = ({ resultBox, setResultBox }) => {
       ) : (
         <div className="result">
           {/* 결과 코스 */}
-          <div className="result_head_container">
-            <h2 className="result_head">
-              <span className="courseNameNum">{courseId + 1}코스</span>
-              <span className="courseName">{courseName}</span>
-            </h2>
-            <h4 className="result_course_destination">
-              <span>{courseDestination}</span> | 코스 총거리 :
-              <span>{courseDistance}</span>
-            </h4>
-          </div>
-          <h3 className="result_course_path">{coursePath}</h3>
+          <CourseHeader
+            courseId={courseId}
+            courseName={courseName}
+            courseDestination={courseDestination}
+            courseDistance={courseDistance}
+            coursePath={coursePath}
+          />
+
           {/* 카카오맵 */}
           <KakaoMap coordinates={coordinates} resultIndex={resultIndex} />
+
           {/* 코스설명 */}
           <div className="result_text">
             <b>{courseInfoText[0]}</b>
@@ -117,11 +120,13 @@ const ResultPage = ({ resultBox, setResultBox }) => {
                 ))}
             </ul>
           </div>
+
           {/* 버튼 */}
           <div className="result_btn_container">
             <button onClick={reStartBtn}>다시하기</button>
             <button onClick={modalBtn}>공유하기</button>
           </div>
+
           {/* <!-- 공유하기 모달창 --> */}
           <Modal control={control} modalBtn={modalBtn} />
         </div>
