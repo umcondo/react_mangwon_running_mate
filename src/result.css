@@ -1,6 +1,6 @@
 /* 결과대기 애니메이션 페이지 */
 .result_animation {
-  position: absolute;
+  position: relative;
   top: 0px;
   height: 100%;
   width: 100%;
@@ -17,7 +17,7 @@
   text-align: center;
   font-size: 2.5em;
   width: 130%;
-  animation: shake 2s linear;
+  /* animation: shake 2s linear; */
 }
 @keyframes shake {
   from {

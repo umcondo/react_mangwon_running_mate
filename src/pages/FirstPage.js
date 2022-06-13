@@ -1,7 +1,7 @@
 // 컴포넌트
-import AnimationContainer from "./../components/firstPage/Animation";
-import Footer from "./../components/firstPage/Footer";
-import Main from "./../components/firstPage/Main";
+import AnimationContainer from "../components/firstPage/Animation";
+import Footer from "../components/firstPage/Footer";
+import Main from "../components/firstPage/Main";
 
 const FirstPage = () => {
   return (

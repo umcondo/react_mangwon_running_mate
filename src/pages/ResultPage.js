@@ -82,17 +82,17 @@ const ResultPage = ({ resultBox, setResultBox }) => {
   const [control, setControl] = useState(false);
   // 공유하기 모달
   const modalBtn = () => {
-    return setControl(!control);
+    return setControl((control) => !control);
   };
 
   //결과애니메이션
-  let [isShow, SetIsShow] = useState(true);
+  const [isShow, SetIsShow] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
       SetIsShow(false);
     }, 2000);
-  });
+  }, []);
 
   return (
     <>

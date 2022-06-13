@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 /* 컴포넌트 */
 import Progress from "../components/questionPage/Progress";
 import QuestionContent from "../components/questionPage/QuestionContent";
-import BackButton from "./../components/questionPage/BackButton";
+import BackButton from "../components/questionPage/BackButton";
 
 /* 데이터 */
-import { Question } from "./../util/data";
+import { Question } from "../util/data";
 
 const QuestionPage = ({ resultBox, setResultBox }) => {
   // state : questionNum : 1(default), 2, 3
