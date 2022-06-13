@@ -2,8 +2,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 /* 컴포넌트 */
-import Progress from "../Components/Progress";
-import QuestionContent from "../Components/QuestionContent";
+import Progress from "../components/questionPage/Progress";
+import QuestionContent from "../components/questionPage/QuestionContent";
+import BackButton from "./../components/questionPage/BackButton";
 
 /* 데이터 */
 import { Question } from "./../util/data";
@@ -30,7 +31,7 @@ const QuestionPage = ({ resultBox, setResultBox }) => {
   const curAnswer2 = currentQuestion.answer[1].text;
 
   const nextQuestion = (e) => {
-    setCurrentQuestionIndex(currentQuestionIndex + 1);
+    setCurrentQuestionIndex((currentQuestionIndex) => currentQuestionIndex + 1);
 
     let targetValue = e.target.textContent;
     questionBox(targetValue);
@@ -45,12 +46,11 @@ const QuestionPage = ({ resultBox, setResultBox }) => {
     let curValue1 = currentQuestion.answer[0].value[0];
     let curValue2 = currentQuestion.answer[1].value[0];
 
-    targetValue.slice(0, 3) === curAnswer1.slice(0, 3)
-      ? setResultBox([...resultBox, curValue1])
-      : setResultBox([...resultBox, curValue2]);
-    // targetValue.slice(0, 3) === curAnswer1.slice(0, 3)
-    //   ? resultBox.push(curValue1)
-    //   : resultBox.push(curValue2);
+    if (targetValue.slice(0, 3) === curAnswer1.slice(0, 3)) {
+      setResultBox([...resultBox, curValue1]);
+    } else {
+      setResultBox([...resultBox, curValue2]);
+    }
   };
 
   const navigate = useNavigate();
@@ -60,19 +60,18 @@ const QuestionPage = ({ resultBox, setResultBox }) => {
 
   // 뒤로가기 버튼 : state를 -1 한다.
   const backwardBtn = () => {
-    setCurrentQuestionIndex(currentQuestionIndex - 1);
+    setCurrentQuestionIndex((currentQuestionIndex) => currentQuestionIndex - 1);
     setResultBox(resultBox.slice(0, resultBox.length - 1));
-    // resultBox.pop();
   };
+
   return (
     <div className="question_container">
       {/* <!-- 진행바 --> */}
-      <header>
-        <Progress
-          currentQuestionIndex={currentQuestionIndex}
-          questionCount={questionCount}
-        />
-      </header>
+      <Progress
+        currentQuestionIndex={currentQuestionIndex}
+        questionCount={questionCount}
+      />
+
       {/* <!-- 질문내용 --> */}
       <QuestionContent
         questionBox={questionBox}
@@ -83,16 +82,10 @@ const QuestionPage = ({ resultBox, setResultBox }) => {
         curAnswer2={curAnswer2}
       />
       {/* <!-- 뒤로가기 --> */}
-      <div
-        className="question_btn_box"
-        style={{
-          visibility: currentQuestionIndex === 1 ? "hidden" : "visible",
-        }}
-      >
-        <button className="question_back_btn" onClick={backwardBtn}>
-          <span>&lt;</span> 뒤로가기
-        </button>
-      </div>
+      <BackButton
+        currentQuestionIndex={currentQuestionIndex}
+        backwardBtn={backwardBtn}
+      />
     </div>
   );
 };

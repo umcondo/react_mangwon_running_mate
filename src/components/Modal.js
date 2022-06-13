@@ -1,3 +1,12 @@
+const ModalContent = ({ clickFunc, imgSrc, modalContentText }) => {
+  return (
+    <div className="modal_content">
+      <img onClick={clickFunc} src={imgSrc} alt="링크복사" />
+      <span onClick={clickFunc}>{modalContentText}</span>
+    </div>
+  );
+};
+
 const Modal = ({ control, modalBtn }) => {
   const env = process.env;
   env.PUBLIC_URL = env.PUBLIC_URL || "";
@@ -41,22 +50,17 @@ const Modal = ({ control, modalBtn }) => {
         className="modal_container"
       >
         <h3>공유하기</h3>
-        <div className="modal_content">
-          <img
-            onClick={clip}
-            src={env.PUBLIC_URL + "/assets/image/copy3.png"}
-            alt="링크복사"
-          />
-          <span onClick={clip}>링크복사</span>
-        </div>
-        <div className="modal_content">
-          <img
-            onClick={kakaoSendLink}
-            src={env.PUBLIC_URL + "/assets/image/kakao_logo.png"}
-            alt="카카오톡"
-          />
-          <span onClick={kakaoSendLink}>카카오톡</span>
-        </div>
+        <ModalContent
+          clickFunc={clip}
+          imgSrc={env.PUBLIC_URL + "/assets/image/copy3.png"}
+          modalContentText="링크복사"
+        />
+        <ModalContent
+          clickFunc={kakaoSendLink}
+          imgSrc={env.PUBLIC_URL + "/assets/image/kakao_logo.png"}
+          modalContentText="카카오톡"
+        />
+
         <div onClick={modalBtn} className="modal_exit">
           <i className="fa-solid fa-xmark"></i>
         </div>

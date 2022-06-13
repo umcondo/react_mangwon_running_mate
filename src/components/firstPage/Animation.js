@@ -1,3 +1,20 @@
+const AnimationContainer = () => {
+  const animationNumber = 3;
+
+  return (
+    <div className="first_animation">
+      {[...new Array(animationNumber)].map((elm, index) => {
+        return (
+          // 그저 key prop 에러를 없애기 위해 index를 넣어주었다.
+          <div className={`runner_${index + 1}`} key={index}>
+            <Animation />
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
 const Animation = () => {
   const env = process.env;
   env.PUBLIC_URL = env.PUBLIC_URL || "";
@@ -54,4 +71,4 @@ const Animation = () => {
   );
 };
 
-export default Animation;
+export default AnimationContainer;

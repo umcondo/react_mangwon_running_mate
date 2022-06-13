@@ -1,3 +1,56 @@
+/* 모바일에서는 hover가 동작하지 않도록 미디어 쿼리 설정 */
+@media (hover: hover) and (pointer: fine) {
+  .first_page_container button:hover {
+    color: var(--font-color-white);
+    background-color: var(--font-color-dark);
+    transition: 0.2s linear;
+  }
+  .mobile_footer_info a:hover,
+  .footer-info a:hover {
+    text-decoration: underline;
+  }
+  .question_back_btn:hover {
+    background-color: var(--font-color-orange);
+    color: var(--font-color-white);
+  }
+  .question_container
+    .question_content
+    .question_text_box
+    .question_text:hover {
+    background-color: var(--font-color-dark);
+    color: var(--font-color-white);
+    transition: 0.5s;
+  }
+  .result_modal .modal_container .modal_exit:hover {
+    color: #000;
+    cursor: pointer;
+  }
+  .dotOverlay:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+  .overlay_toggle_btn:hover {
+    background: #f5f5f5;
+  }
+  .current_location_btn:hover {
+    background: #f5f5f5;
+  }
+  .custom_typecontrol .btn:hover {
+    background: #f5f5f5;
+  }
+  .custom_typecontrol .selected_btn:hover {
+    color: #fff;
+  }
+  .custom_zoomcontrol span:hover {
+    background: #f5f5f5;
+  }
+  .result_btn_container button:hover {
+    background-color: var(--font-color-orange);
+    color: var(--font-color-white);
+  }
+}
+
+/* 패드 반응형 */
 @media screen and (max-width: 950px) {
   .result_map_container {
     width: 100%;
@@ -31,6 +84,7 @@
   main {
     overflow: visible;
   }
+
   /* 첫페이지 */
   .first_page_container {
     gap: 15px;
@@ -68,11 +122,13 @@
     align-items: center;
     gap: 2px;
   }
+
   /* 질문페이지 */
   .question_container .question_content .question_img {
     margin-top: 15px;
     margin-bottom: 20px;
   }
+
   /* 질문 제목 */
   .question_container .question_content .question_head {
     margin-bottom: 30px;
@@ -87,6 +143,7 @@
   .question_container .question_content .question_text_box {
     gap: 15px;
   }
+
   /* 질문 1,2 */
   .question_container .question_content .question_text_box .question_text {
     width: 350px;
@@ -103,17 +160,28 @@
   .result_animation h1 {
     font-size: 1.5em;
   }
+
   /* 결과페이지*/
   .result_head {
     font-size: 1.7em;
   }
 }
 
-/* 모바일 반응형 */
+@media screen and (max-width: 700px) and (max-height: 900px) {
+  .result {
+    height: 105%;
+  }
+}
+/* surface pro */
+@media screen and (max-width: 540px) and (max-height: 720px) {
+  .result {
+    height: 125%;
+  }
+}
 
+/* 모바일 반응형 */
 @media screen and (max-width: 500px) {
   /* 첫페이지 */
-
   .first_page_container {
     gap: 15px;
   }
@@ -145,6 +213,7 @@
   .mobile_footer .mobile_footer_info p span {
     display: none;
   }
+
   /* 질문페이지 */
   header .progress {
     gap: 10px;
@@ -169,6 +238,7 @@
     width: 80px;
     margin-bottom: 20px;
   }
+
   /* 질문 제목 */
   .question_container .question_content .question_head {
     margin-bottom: 30px;
@@ -184,6 +254,7 @@
   .question_container .question_content .question_text_box {
     gap: 10px;
   }
+
   /* 질문 1,2 */
   .question_container .question_content .question_text_box .question_text {
     max-width: 280px;
@@ -197,7 +268,6 @@
   }
 
   /* 애니메이션 */
-
   .result_animation h1 {
     font-size: 1.3em;
   }
@@ -275,5 +345,21 @@
   }
   #toggle_btn {
     display: none;
+  }
+}
+
+/* 갤럭시 폴드 */
+@media screen and (max-width: 300px) {
+  .result_text .courseTimeInfo {
+    gap: 17px;
+  }
+  .result_text .courseTimeInfo li {
+    font-size: 0.8em;
+  }
+}
+/* 높이가 작은 핸드폰 화면에서 결과페이지가 짤리는 문제 때문에 미디어 쿼리 추가*/
+@media screen and (max-width: 450px) and (max-height: 730px) {
+  .result {
+    height: 125%;
   }
 }
