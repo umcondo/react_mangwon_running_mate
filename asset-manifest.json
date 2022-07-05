@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/react_mangwon_running_mate/static/css/main.085a85f1.css",
+    "main.js": "/react_mangwon_running_mate/static/js/main.5b416a7b.js",
+    "static/media/AppleSDGothicNeoL00.woff": "/react_mangwon_running_mate/static/media/AppleSDGothicNeoL00.2d6d86b9f4b50ee0b9bd.woff",
+    "index.html": "/react_mangwon_running_mate/index.html",
+    "main.085a85f1.css.map": "/react_mangwon_running_mate/static/css/main.085a85f1.css.map",
+    "main.5b416a7b.js.map": "/react_mangwon_running_mate/static/js/main.5b416a7b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.085a85f1.css",
+    "static/js/main.5b416a7b.js"
+  ]
+}
