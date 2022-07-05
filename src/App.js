@@ -16,7 +16,7 @@ const App = () => {
   const [resultBox, setResultBox] = useState([]);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div className="App">
         <Routes>
           <Route path="/" element={<FirstPage />} />
