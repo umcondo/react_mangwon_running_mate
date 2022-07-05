@@ -5,7 +5,11 @@ const DesktopFooter = () => {
   return (
     <div className="desktop_footer">
       <div className="footer-info">
-        <img src="assets/image/mapo_logo_footer.svg" alt="" width="100px" />
+        <img
+          src={env.PUBLIC_URL + "/assets/image/mapo_logo_footer.svg"}
+          alt=""
+          width="100px"
+        />
         <h3>망원 런닝 메이트</h3>
       </div>
       <div className="footer-info">
@@ -36,7 +40,7 @@ const DesktopFooter = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <img src={env.PUBLIC_URL + "assets/image/blog_ico.png"} alt="" />
+          <img src={env.PUBLIC_URL + "/assets/image/blog_ico.png"} alt="" />
         </a>
       </div>
     </div>
