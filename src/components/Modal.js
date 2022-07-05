@@ -1,3 +1,6 @@
+import copy from "copy-to-clipboard";
+import { useLocation } from "react-router-dom";
+
 const ModalContent = ({ clickFunc, imgSrc, modalContentText }) => {
   return (
     <div className="modal_content">
@@ -29,9 +32,13 @@ const Modal = ({ control, modalBtn }) => {
   }
 
   /* 공유하기 - 현재 링크 복사 */
+  // const location = useLocation();
   function clip() {
+    // const url = location.pathname;
+    // console.log(process.env.PUBLIC_URL + url);
+    // console.log(window.document.location.href);
     let url = window.document.location.href;
-    navigator.clipboard.writeText(url);
+    copy(url); // copy-to-clipboard 라이브러리를 사용했다.
     alert("복사되었습니다 !");
   }
 
