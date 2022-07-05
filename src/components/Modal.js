@@ -21,12 +21,19 @@ const Modal = ({ control, modalBtn }) => {
   function kakaoSendLink() {
     if (!Kakao.isInitialized()) Kakao.init("16c159fd8e6cf9b9dc0f34f5922c2f5a");
 
-    Kakao.Link.sendDefault({
-      objectType: "text",
-      text: "망원런닝메이트!!",
-      link: {
-        mobileWebUrl: "https://developers.kakao.com",
-        webUrl: "https://developers.kakao.com",
+    // Kakao.Link.sendDefault({
+    //   objectType: "text",
+    //   text: "망원런닝메이트!!",
+    //   link: {
+    //     mobileWebUrl: "https://developers.kakao.com",
+    //     webUrl: "https://developers.kakao.com",
+    //   },
+    // });
+    Kakao.Share.sendCustom({
+      templateId: 79200,
+      templateArgs: {
+        title: "제목 영역입니다.",
+        description: "설명 영역입니다.",
       },
     });
   }
