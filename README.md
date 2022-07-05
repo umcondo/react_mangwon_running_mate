@@ -17,6 +17,9 @@ update design, result animation 구현
 6/6
 벨로퍼트 1~15챕터를 바탕으로 첫페이지, 질문페이지, 결과페이지 및 컴포넌트 리팩토링
 
+7/5
+배포
+
 ---
 
 ## 이슈
@@ -33,3 +36,7 @@ update design, result animation 구현
     resultIndex = +localStorage.getItem("resultIndex");
   }
 ```
+
+- 이슈 : 카카오톡 공유 시 결과페이지가 아니라 서비스 자체가 공유된다.
+
+- 이슈 : 배포 후 로딩 애니메이션 및 결과페이지의 모바일 반응형 css가 오류
