@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/react_mangwon_running_mate/static/css/main.085a85f1.css",
-    "main.js": "/react_mangwon_running_mate/static/js/main.5b416a7b.js",
+    "main.css": "/react_mangwon_running_mate/static/css/main.32e5854c.css",
+    "main.js": "/react_mangwon_running_mate/static/js/main.44bec4a7.js",
     "static/media/AppleSDGothicNeoL00.woff": "/react_mangwon_running_mate/static/media/AppleSDGothicNeoL00.2d6d86b9f4b50ee0b9bd.woff",
     "index.html": "/react_mangwon_running_mate/index.html",
-    "main.085a85f1.css.map": "/react_mangwon_running_mate/static/css/main.085a85f1.css.map",
-    "main.5b416a7b.js.map": "/react_mangwon_running_mate/static/js/main.5b416a7b.js.map"
+    "main.32e5854c.css.map": "/react_mangwon_running_mate/static/css/main.32e5854c.css.map",
+    "main.44bec4a7.js.map": "/react_mangwon_running_mate/static/js/main.44bec4a7.js.map"
   },
   "entrypoints": [
-    "static/css/main.085a85f1.css",
-    "static/js/main.5b416a7b.js"
+    "static/css/main.32e5854c.css",
+    "static/js/main.44bec4a7.js"
   ]
 }
