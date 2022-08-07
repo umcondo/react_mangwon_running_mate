@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useCallback, useRef } from "react";
 
 const { kakao } = window;
 
@@ -26,7 +26,7 @@ const KakaoMap = ({ coordinates, resultIndex }) => {
     const MapCenter = coordinates[resultIndex].MapCenter;
 
     runningCourse(mapCoordinates, MapCenter);
-  }, []);
+  }, [coordinates, resultIndex]);
 
   function runningCourse(coordinates, MapCenter) {
     /* 지도 생성 */
@@ -39,6 +39,12 @@ const KakaoMap = ({ coordinates, resultIndex }) => {
     CENTER_POINT = new kakao.maps.LatLng(MapCenter.lng, MapCenter.lat);
 
     map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+    // 마우스 드래그와 모바일 터치를 이용한 지도 이동을 막는다
+    map.setDraggable(false);
+
+    // 마우스 휠과 모바일 터치를 이용한 지도 확대, 축소를 막는다
+    map.setZoomable(false);
 
     /* 러닝 코스 점찍고, 선연결 */
     var linePath = []; // 러닝 코스
