@@ -5,7 +5,6 @@ const AnimationPage = () => {
   return (
     <div className="result_animation">
       <div className="Animation result_container">
-        <h1>코스 결과를 받아오는 중...</h1>
         {/* <!-- 몸 전체 --> */}
         <img src={env.PUBLIC_URL + "/assets/image/man.png"} alt="" />
         {/* <!-- 팔 --> */}
@@ -47,6 +46,7 @@ const AnimationPage = () => {
           </div>
         </div>
       </div>
+      <h1>코스 결과를 받아오는 중...</h1>
     </div>
   );
 };

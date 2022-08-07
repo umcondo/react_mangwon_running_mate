@@ -10,14 +10,29 @@
 }
 .result_animation h1 {
   position: absolute;
-  bottom: -22%;
+  bottom: 5%;
   color: #ff1e56;
-  left: 55%;
-  transform: translate(-47.5%, -50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   font-size: 2.5em;
   width: 130%;
-  /* animation: shake 2s linear; */
+  -webkit-animation: shake 2s infinite linear;
+  animation: shake 2s infinite linear;
+}
+@-webkit-keyframes shake {
+  from {
+    transform: translate(-47.5%, -50%);
+  }
+  30% {
+    transform: translate(-47.5%, -50%) rotate(-2deg) translateY(-1px);
+  }
+  80% {
+    transform: translate(-47.5%, -50%) rotate(2deg) translateY(1px);
+  }
+  100% {
+    transform: translate(-47.5%, -50%);
+  }
 }
 @keyframes shake {
   from {
@@ -42,7 +57,8 @@
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation: updown 0.5s linear infinite alternate;
+  -webkit-animation: updown 0.5s linear infinite alternate;
+          animation: updown 0.5s linear infinite alternate;
 }
 .hand1 {
   position: absolute;
@@ -51,7 +67,8 @@
   left: 45%;
   width: 17%;
   transform-origin: 90% 10%;
-  animation: hand1 1.5s linear infinite;
+  -webkit-animation: hand1 1.5s linear infinite;
+          animation: hand1 1.5s linear infinite;
 }
 .hand2 {
   position: absolute;
@@ -60,7 +77,8 @@
   left: 46%;
   width: 16%;
   transform-origin: 100% 20%;
-  animation: hand2 1.5s linear infinite;
+  -webkit-animation: hand2 1.5s linear infinite;
+          animation: hand2 1.5s linear infinite;
 }
 .thigh-1 {
   position: absolute;
@@ -68,7 +86,8 @@
   top: 45%;
   left: 48.7%;
   width: 22%;
-  animation: thigh1 1.5s linear infinite;
+  -webkit-animation: thigh1 1.5s linear infinite;
+          animation: thigh1 1.5s linear infinite;
   transform-origin: 40% 10%;
 }
 .calf-1 {
@@ -77,7 +96,8 @@
   top: 105%;
   left: 65%;
   width: 75%;
-  animation: calf1 1.5s linear infinite;
+  -webkit-animation: calf1 1.5s linear infinite;
+          animation: calf1 1.5s linear infinite;
   transform-origin: 30% 0%;
 }
 .ankle-1 {
@@ -86,7 +106,8 @@
   bottom: -30%;
   right: -50%;
   width: 95%;
-  animation: ankle1 1.5s linear infinite;
+  -webkit-animation: ankle1 1.5s linear infinite;
+          animation: ankle1 1.5s linear infinite;
   transform-origin: 20% 10%;
 }
 .toe-1 {
@@ -95,7 +116,8 @@
   bottom: -5%;
   right: -5%;
   width: 40%;
-  animation: toe1 1.5s linear infinite;
+  -webkit-animation: toe1 1.5s linear infinite;
+          animation: toe1 1.5s linear infinite;
   transform-origin: left bottom;
 }
 .thigh-2 {
@@ -104,7 +126,8 @@
   top: 45%;
   left: 48.7%;
   width: 22%;
-  animation: thigh2 1.5s linear infinite;
+  -webkit-animation: thigh2 1.5s linear infinite;
+          animation: thigh2 1.5s linear infinite;
   transform-origin: 40% 10%;
 }
 .calf-2 {
@@ -113,7 +136,8 @@
   top: 105%;
   left: 65%;
   width: 75%;
-  animation: calf2 1.5s linear infinite;
+  -webkit-animation: calf2 1.5s linear infinite;
+          animation: calf2 1.5s linear infinite;
   transform-origin: 30% 0%;
 }
 
@@ -123,7 +147,8 @@
   bottom: -30%;
   right: -50%;
   width: 95%;
-  animation: ankle2 1.5s linear infinite;
+  -webkit-animation: ankle2 1.5s linear infinite;
+          animation: ankle2 1.5s linear infinite;
   transform-origin: 20% 10%;
 }
 .toe-2 {
@@ -132,8 +157,44 @@
   bottom: -5%;
   right: -5%;
   width: 40%;
-  animation: toe2 1.5s linear infinite;
+  -webkit-animation: toe2 1.5s linear infinite;
+          animation: toe2 1.5s linear infinite;
   transform-origin: left bottom;
+}
+@-webkit-keyframes hand1 {
+  from {
+    transform: rotate(-100deg);
+  }
+  10% {
+    transform: rotate(-110deg);
+  }
+  20% {
+    transform: rotate(-100deg);
+  }
+  30% {
+    transform: rotate(-60deg);
+  }
+  40% {
+    transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(15deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(-20deg);
+  }
+  90% {
+    transform: rotate(-50deg);
+  }
+  100% {
+    transform: rotate(-100deg);
+  }
 }
 @keyframes hand1 {
   from {
@@ -170,6 +231,41 @@
     transform: rotate(-100deg);
   }
 }
+@-webkit-keyframes hand2 {
+  from {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(15deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-30deg);
+  }
+  40% {
+    transform: rotate(-60deg);
+  }
+  50% {
+    transform: rotate(-100deg);
+  }
+  60% {
+    transform: rotate(-110deg);
+  }
+  70% {
+    transform: rotate(-100deg);
+  }
+  80% {
+    transform: rotate(-60deg);
+  }
+  90% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 @keyframes hand2 {
   from {
     transform: rotate(0deg);
@@ -203,6 +299,42 @@
   }
   100% {
     transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes thigh1 {
+  from {
+    transform: rotate(40deg);
+  }
+  10% {
+    transform: rotate(50deg);
+  }
+  20% {
+    transform: rotate(55deg);
+  }
+  30% {
+    transform: rotate(40deg);
+  }
+  40% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-60deg);
+  }
+  60% {
+    transform: rotate(-30deg);
+  }
+  70% {
+    transform: rotate(-5deg);
+  }
+  80% {
+    transform: rotate(10deg);
+  }
+  90% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(40deg);
   }
 }
 
@@ -242,6 +374,42 @@
   }
 }
 
+@-webkit-keyframes calf1 {
+  from {
+    transform: rotate(20deg);
+  }
+  10% {
+    transform: rotate(40deg);
+  }
+  20% {
+    transform: rotate(70deg);
+  }
+  30% {
+    transform: rotate(110deg);
+  }
+  40% {
+    transform: rotate(110deg);
+  }
+  50% {
+    transform: rotate(110deg);
+  }
+  60% {
+    transform: rotate(10deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(30deg);
+  }
+  90% {
+    transform: rotate(40deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
+
 @keyframes calf1 {
   from {
     transform: rotate(20deg);
@@ -277,6 +445,41 @@
     transform: rotate(20deg);
   }
 }
+@-webkit-keyframes ankle1 {
+  from {
+    transform: rotate(-30deg);
+  }
+  10% {
+    transform: rotate(-10deg);
+  }
+  20% {
+    transform: rotate(-20deg);
+  }
+  30% {
+    transform: rotate(-30deg);
+  }
+  40% {
+    transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+  60% {
+    transform: rotate(-20deg);
+  }
+  70% {
+    transform: rotate(-20deg);
+  }
+  80% {
+    transform: rotate(-40deg);
+  }
+  90% {
+    transform: rotate(-40deg);
+  }
+  100% {
+    transform: rotate(-30deg);
+  }
+}
 @keyframes ankle1 {
   from {
     transform: rotate(-30deg);
@@ -310,6 +513,42 @@
   }
   100% {
     transform: rotate(-30deg);
+  }
+}
+
+@-webkit-keyframes toe1 {
+  from {
+    transform: rotate(-40deg);
+  }
+  10% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(0deg);
+  }
+  90% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(-40deg);
   }
 }
 
@@ -349,6 +588,41 @@
   }
 }
 /* 두번째 다리 */
+@-webkit-keyframes thigh2 {
+  from {
+    transform: rotate(-40deg);
+  }
+  10% {
+    transform: rotate(-30deg);
+  }
+  20% {
+    transform: rotate(-5deg);
+  }
+  30% {
+    transform: rotate(10deg);
+  }
+  40% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(40deg);
+  }
+  60% {
+    transform: rotate(50deg);
+  }
+  70% {
+    transform: rotate(55deg);
+  }
+  80% {
+    transform: rotate(40deg);
+  }
+  90% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-40deg);
+  }
+}
 @keyframes thigh2 {
   from {
     transform: rotate(-40deg);
@@ -382,6 +656,42 @@
   }
   100% {
     transform: rotate(-40deg);
+  }
+}
+
+@-webkit-keyframes calf2 {
+  from {
+    transform: rotate(100deg);
+  }
+  10% {
+    transform: rotate(10deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(30deg);
+  }
+  40% {
+    transform: rotate(40deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  60% {
+    transform: rotate(40deg);
+  }
+  70% {
+    transform: rotate(70deg);
+  }
+  80% {
+    transform: rotate(110deg);
+  }
+  90% {
+    transform: rotate(110deg);
+  }
+  100% {
+    transform: rotate(100deg);
   }
 }
 
@@ -420,6 +730,41 @@
     transform: rotate(100deg);
   }
 }
+@-webkit-keyframes ankle2 {
+  from {
+    transform: rotate(-30deg);
+  }
+  10% {
+    transform: rotate(-20deg);
+  }
+  20% {
+    transform: rotate(-20deg);
+  }
+  30% {
+    transform: rotate(-40deg);
+  }
+  40% {
+    transform: rotate(-40deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+  60% {
+    transform: rotate(-10deg);
+  }
+  70% {
+    transform: rotate(-20deg);
+  }
+  80% {
+    transform: rotate(-30deg);
+  }
+  90% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(-30deg);
+  }
+}
 @keyframes ankle2 {
   from {
     transform: rotate(-30deg);
@@ -453,6 +798,41 @@
   }
   100% {
     transform: rotate(-30deg);
+  }
+}
+@-webkit-keyframes toe2 {
+  from {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(-40deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(0deg);
+  }
+  90% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
 @keyframes toe2 {
@@ -491,6 +871,15 @@
   }
 }
 
+@-webkit-keyframes updown {
+  from {
+    margin-top: -8px;
+  }
+  to {
+    margin-top: 0;
+  }
+}
+
 @keyframes updown {
   from {
     margin-top: -8px;
@@ -508,7 +897,17 @@
   flex-direction: column;
   align-items: center;
   color: var(--font-color-dark);
-  animation: result_fadeIn 0.6s linear;
+  -webkit-animation: result_fadeIn 0.6s linear;
+          animation: result_fadeIn 0.6s linear;
+}
+@-webkit-keyframes result_fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15%);
+  }
+  to {
+    opacity: 1;
+  }
 }
 @keyframes result_fadeIn {
   from {

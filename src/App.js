@@ -8,8 +8,8 @@ import ResultPage from "./pages/ResultPage";
 
 /* Css */
 import "./default.css";
-import "./mobile.css";
 import "./result.css";
+import "./mobile.css";
 
 const App = () => {
   // 답변을 모아두는 박스
