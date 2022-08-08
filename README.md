@@ -23,6 +23,9 @@ update design, result animation 구현
 8/7
 버그 수정 및 image lazy loading 추가
 
+8/8
+image lazy loading 롤백, git rebase -i drop option 이용 커밋삭제
+
 ---
 
 ## 이슈
